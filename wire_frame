@@ -1,0 +1,18 @@
+@startuml
+!define RECTANGLE class
+
+' Creare secțiuni pentru Wireframe
+RECTANGLE "Pagina de Postare Întrebare" as page {
+  RECTANGLE "Titlu: [____________________]" as title
+  RECTANGLE "Descriere: [_________________________]" as description
+  RECTANGLE "Etichete: [__________] [__________]" as tags
+  RECTANGLE "[ Postează întrebare ]" as post_button
+}
+
+' Plasare componentelor Wireframe pe pagina
+page -down-> title : Plasare Titlu
+page -down-> description : Plasare Descriere
+page -down-> tags : Plasare Etichete
+page -down-> post_button : Plasare Butonul
+
+@enduml
