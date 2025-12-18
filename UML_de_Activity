@@ -1,0 +1,17 @@
+@startuml
+|Utilizator|
+start
+:Autentificare utilizator;
+:Accesare secțiune „Postează întrebare”;
+:Completează titlu și descriere;
+:Adaugă etichete;
+
+if (Date valide?) then (da)
+  :Postează întrebare;
+else (nu)
+  :Afișează mesaj de eroare;
+  :Corectează datele;
+endif
+
+stop
+@enduml
