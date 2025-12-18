@@ -1,0 +1,28 @@
+@startuml
+
+' Actor principal
+actor "Utilizator înregistrat" as User
+
+' Scenariul 1: Postarea unei întrebări
+rectangle "Postarea unei întrebări" {
+    usecase "Autentificare utilizator" as UC1
+    usecase "Accesează secțiunea 'Postează întrebare'" as UC2
+    usecase "Completează titlul și descrierea" as UC3
+    usecase "Adaugă etichete relevante" as UC4
+    usecase "Apasă 'Postează întrebare'" as UC5
+    usecase "Verifică validitatea datelor" as UC6
+    usecase "Postează întrebare" as UC7
+    usecase "Sugerare întrebări similare" as UC8
+}
+
+' Relațiile între cazuri
+User --> UC1 : "Se loghează"
+User --> UC2 : "Accesează secțiunea"
+User --> UC3 : "Completează întrebarea"
+User --> UC4 : "Adaugă etichete"
+User --> UC5 : "Apasă 'Postează întrebare'"
+UC5 --> UC6 : "Verifică datele"
+UC6 --> UC7 : "Publică întrebarea"
+UC7 --> UC8 : "Sugerează întrebări similare"
+
+@enduml
