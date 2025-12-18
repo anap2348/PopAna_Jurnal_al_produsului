@@ -1,0 +1,28 @@
+@startuml
+
+' Actor principal
+actor "Utilizator înregistrat" as User
+
+' Scenariul 2: Răspunsul la o întrebare
+rectangle "Răspunsul la o întrebare" {
+    usecase "Căutare întrebare" as UC9
+    usecase "Citește întrebare" as UC10
+    usecase "Apasă 'Răspunde'" as UC11
+    usecase "Completează răspunsul" as UC12
+    usecase "Apasă 'Postează răspunsul'" as UC13
+    usecase "Verifică răspunsul" as UC14
+    usecase "Postează răspunsul" as UC15
+    usecase "Apreciază răspunsurile existente" as UC16
+}
+
+' Relațiile între cazuri
+User --> UC9 : "Caută întrebare"
+User --> UC10 : "Citește întrebare"
+User --> UC11 : "Apasă 'Răspunde'"
+User --> UC12 : "Completează răspunsul"
+User --> UC13 : "Apasă 'Postează răspunsul'"
+UC13 --> UC14 : "Verifică răspunsul"
+UC14 --> UC15 : "Publică răspunsul"
+User --> UC16 : "Apreciază răspunsurile"
+
+@enduml
